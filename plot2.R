@@ -17,7 +17,7 @@ datasub1$datetime <- as.POSIXct(paste(datasub1$Date, datasub1$Time), format="%d/
 
 
 ##Start Plotting
-#Plot 1
-png(file = "plot1.png", width = 480, height = 480)
-hist(datasub1$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
+#Plot 2
+png(file = "plot2.png", width = 480, height = 480)
+plot(datasub1$datetime, datasub1$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()

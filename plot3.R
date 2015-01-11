@@ -17,7 +17,11 @@ datasub1$datetime <- as.POSIXct(paste(datasub1$Date, datasub1$Time), format="%d/
 
 
 ##Start Plotting
-#Plot 1
-png(file = "plot1.png", width = 480, height = 480)
-hist(datasub1$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
+#Plot 3
+png(file = "plot3.png", width = 480, height = 480)
+plot(datasub1$datetime, datasub1$Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "n")
+lines(datasub1$datetime, datasub1$Sub_metering_1, col = "black")
+lines(datasub1$datetime, datasub1$Sub_metering_2, col = "red")
+lines(datasub1$datetime, datasub1$Sub_metering_3, col = "blue")
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = 1, col = c("black", "red", "blue"))
 dev.off()
